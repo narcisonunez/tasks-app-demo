@@ -10,7 +10,10 @@ import { validateRequest } from '../middlewares/validate-request';
 
 const router = express.Router()
 
-router.post('/tasks', [
+router.post('/tasks',
+  loggedUser,
+  requireAuth,
+  [
     body('title')
       .isLength({ min: 4, max: 250 })
       .withMessage('title must be at least 4 to 250 characters'),
@@ -20,8 +23,6 @@ router.post('/tasks', [
       .withMessage('Description must be at least 5 characters')
   ],
   validateRequest,
-  loggedUser,
-  requireAuth,
   (req: Request, res: Response) => {
     const tasks: any = loadTasks()
 
@@ -44,7 +45,7 @@ router.post('/tasks', [
 
     saveTasks(tasks)
 
-    res.send({
+    res.status(201).send({
       data: existingTasks
     })
 })

@@ -9,7 +9,10 @@ import { requireAuth } from '../middlewares/require-auth';
 
 const router = express.Router()
 
-router.put('/tasks/:id', [
+router.put('/tasks/:id',
+  loggedUser,
+  requireAuth,
+  [
     body('title')
       .isLength({ min: 4, max: 250 })
       .withMessage('title must be at least 4 to 250 characters'),
@@ -23,8 +26,6 @@ router.put('/tasks/:id', [
       .withMessage(`Status must be a valid status. Possible values are ${Object.values(TaskStatus)}`)
   ],
   validateRequest,
-  loggedUser,
-  requireAuth,
   (req: Request, res: Response) => {
     const tasks: any = loadTasks()
 

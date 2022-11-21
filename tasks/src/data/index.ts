@@ -4,8 +4,8 @@ import { Task } from '../models/Task'
 
 
 function loadTasks(): Task[] {
-  const rawData = fs.readFileSync(path.join(__dirname, './tasks.json'))
-  return JSON.parse(rawData.toString())
+  const rawData = fs.readFileSync(path.join(__dirname, './tasks.json'), 'utf-8')
+  return JSON.parse(rawData)
 }
 
 function loadUserTasks(userId: string): Task[] {

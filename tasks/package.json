@@ -4,7 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev src/index.ts"
+    "start": "ts-node-dev src/index.ts",
+    "test": "jest --watchAll --no-cache"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "setupFilesAfter": [
+      "./src/tests/setup.ts"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -23,7 +31,12 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.14",
+    "@types/jest": "^29.2.3",
     "@types/node": "^18.11.9",
-    "@types/uuid": "^8.3.4"
+    "@types/supertest": "^2.0.12",
+    "@types/uuid": "^8.3.4",
+    "jest": "^29.3.1",
+    "supertest": "^6.3.1",
+    "ts-jest": "^29.0.3"
   }
 }
