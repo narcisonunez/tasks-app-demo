@@ -1,0 +1,23 @@
+version: "3.9"
+services:
+  auth:
+    build: ./auth
+    volumes:
+      - type: bind
+        source: ./auth/src/data/users.json
+        target: /app/src/data/users.json
+    ports:
+      - "3000:3000"
+    environment:
+      - JWT_KEY="JWT_KEY"
+      
+  tasks:
+    build: ./tasks
+    volumes:
+      - type: bind
+        source: ./tasks/src/data/tasks.json
+        target: /app/src/data/tasks.json
+    ports:
+      - "3001:3001"
+    environment:
+      - JWT_KEY="JWT_KEY"
