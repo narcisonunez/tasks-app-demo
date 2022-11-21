@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "1f30ff64-98b3-4cfb-a8ba-5962f37a896f",
+		"name": "Test Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19036512"
+	},
+	"item": [
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Get tasks",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{TASKS_HOST}}/tasks",
+							"host": [
+								"{{TASKS_HOST}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add task",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"My first tasks\",\n    \"description\": \"Please, complete this assignment quick\"\n}"
+						},
+						"url": {
+							"raw": "{{TASKS_HOST}}/tasks",
+							"host": [
+								"{{TASKS_HOST}}"
+							],
+							"path": [
+								"tasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update task",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"My first tasks UPDATED\",\n    \"description\": \"Please, complete this assignment quick UPDATED\",\n    \"status\": \"in_progress\"\n}"
+						},
+						"url": {
+							"raw": "{{TASKS_HOST}}/tasks/5e8face6-1857-454f-a79e-f36eaf169ebf",
+							"host": [
+								"{{TASKS_HOST}}"
+							],
+							"path": [
+								"tasks",
+								"5e8face6-1857-454f-a79e-f36eaf169ebf"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "SIgn In",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"narciso.arias21@gmail.com\",\n    \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{AUTH_HOST}}/signin",
+							"host": [
+								"{{AUTH_HOST}}"
+							],
+							"path": [
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"narciso.arias21@gmail.com\",\n    \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{AUTH_HOST}}/signup",
+							"host": [
+								"{{AUTH_HOST}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Out",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{AUTH_HOST}}/signout",
+							"host": [
+								"{{AUTH_HOST}}"
+							],
+							"path": [
+								"signout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Current User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{AUTH_HOST}}/logged-user",
+							"host": [
+								"{{AUTH_HOST}}"
+							],
+							"path": [
+								"logged-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
