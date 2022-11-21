@@ -2,10 +2,10 @@ import express, { Request, Response } from 'express'
 import { body } from 'express-validator'
 import { Task, TaskStatus } from '../models/Task'
 import { loadTasks, saveTasks } from '../data';
-import { NotFoundError } from '../errors/not-found-error';
-import { validateRequest } from '../middlewares/validate-request';
-import { loggedUser } from '../middlewares/logged-user';
-import { requireAuth } from '../middlewares/require-auth';
+import { NotFoundError } from 'common';
+import { validateRequest } from 'common';
+import { loggedUser } from 'common';
+import { requireAuth } from 'common';
 
 const router = express.Router()
 

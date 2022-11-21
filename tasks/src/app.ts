@@ -3,8 +3,8 @@ import 'express-async-errors';
 import { json } from 'body-parser'
 import cookieSession from 'cookie-session'
 
-import { errorHandler } from './middlewares/error-handler'
-import { NotFoundError } from './errors/not-found-error';
+import { errorHandler } from 'common'
+import { NotFoundError } from 'common';
 import { addTaskRouter } from './router/add-task';
 import { getTasksRouter } from './router/get-tasks';
 import { updateTaskRouter } from './router/update-task';

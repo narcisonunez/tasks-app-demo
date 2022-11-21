@@ -1,0 +1,30 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "Move all the Utils, Error Handling here.",
+  "main": "build/index.js",
+  "types": "./build/index.js",
+  "files": [
+    "build/**/*"
+  ],
+  "scripts": {
+    "build": "rm -rf build && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@types/cookie-session": "^2.0.44",
+    "@types/express": "^4.17.14",
+    "@types/express-validator": "^3.0.0",
+    "@types/jsonwebtoken": "^8.5.9",
+    "cookie-session": "^2.0.0",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1"
+  }
+}

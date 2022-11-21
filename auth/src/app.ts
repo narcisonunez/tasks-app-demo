@@ -5,9 +5,10 @@ import cookieSession from 'cookie-session'
 
 import { signInRouter } from './routes/signin'
 import { signUpRouter } from './routes/signup'
-import { errorHandler } from './middlewares/error-handler'
-import { NotFoundError } from './errors/not-found-error';
 import { signoutRouter } from './routes/signout';
+
+import { errorHandler } from 'common'
+import { NotFoundError } from 'common';
 
 
 const app = express()

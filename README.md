@@ -5,6 +5,13 @@
 - Import postman environment
 
 
+## Build common module
+
+```
+cd common
+npm run build
+```
+
 ## Start the services
 
 ### Using docker-compose

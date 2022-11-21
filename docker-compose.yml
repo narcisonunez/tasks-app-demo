@@ -6,6 +6,9 @@ services:
       - type: bind
         source: ./auth/src/data/users.json
         target: /app/src/data/users.json
+      - type: bind
+        source: ./common
+        target: /common
     ports:
       - "3000:3000"
     environment:
@@ -17,6 +20,9 @@ services:
       - type: bind
         source: ./tasks/src/data/tasks.json
         target: /app/src/data/tasks.json
+      - type: bind
+        source: ./common
+        target: /common
     ports:
       - "3001:3001"
     environment:

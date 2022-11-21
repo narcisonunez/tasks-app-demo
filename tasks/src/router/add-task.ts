@@ -1,12 +1,11 @@
 import express, { Request, Response } from 'express'
-import { body, validationResult } from 'express-validator'
+import { body } from 'express-validator'
 import { Task, TaskStatus } from '../models/Task'
-import { RequestValidationError } from '../errors/request-validation-error';
 import { loadTasks, saveTasks } from '../data';
 import { v4 as uuidv4 } from 'uuid';
-import { loggedUser } from '../middlewares/logged-user';
-import { requireAuth } from '../middlewares/require-auth';
-import { validateRequest } from '../middlewares/validate-request';
+import { loggedUser } from 'common';
+import { requireAuth } from 'common';
+import { validateRequest } from 'common';
 
 const router = express.Router()
 

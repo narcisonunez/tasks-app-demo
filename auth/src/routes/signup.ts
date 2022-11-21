@@ -6,7 +6,7 @@ import { body } from 'express-validator'
 import { User } from '../models/User'
 import { loadUsers, saveUsers } from '../data'
 import { Password } from '../utils/password';
-import { validateRequest } from '../middlewares/validate-request';
+import { validateRequest } from 'common';
 
 
 const router = express.Router()

@@ -1,7 +1,7 @@
 import express, { Request, Response } from 'express'
 import { loadUserTasks } from '../data'
-import { loggedUser } from '../middlewares/logged-user';
-import { requireAuth } from '../middlewares/require-auth';
+import { loggedUser } from 'common';
+import { requireAuth } from 'common';
 
 const router = express.Router()
 
